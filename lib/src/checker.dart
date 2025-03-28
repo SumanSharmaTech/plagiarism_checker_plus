@@ -6,7 +6,33 @@ import '../plagiarism_checker_plus.dart';
 ///  [jaccard] Uses the Jaccard Similarity algorithm.
 ///  [tfidf] Uses the TF-IDF (Term Frequency-Inverse Document Frequency) algorithm.
 ///  [average] Uses the average of all available algorithms.
-enum Algorithm { cosine, jaccard, tfidf, average }
+
+/// Enum representing the available similarity algorithms.
+enum Algorithm {
+  /// Uses the Cosine Similarity algorithm.
+  ///
+  /// Measures the cosine of the angle between two vectors in a multi-dimensional space,
+  /// providing a similarity score based on the orientation rather than magnitude.
+  cosine,
+
+  /// Uses the Jaccard Similarity algorithm.
+  ///
+  /// Calculates similarity based on the size of the intersection divided by the size of the
+  /// union of two sets, commonly used for comparing document similarity.
+  jaccard,
+
+  /// Uses the TF-IDF (Term Frequency-Inverse Document Frequency) algorithm.
+  ///
+  /// Evaluates how important a word is to a document in a collection by considering both
+  /// term frequency and inverse document frequency.
+  tfidf,
+
+  /// Uses the average of all available algorithms.
+  ///
+  /// Combines results from Cosine, Jaccard, and TF-IDF algorithms to produce a more
+  /// balanced similarity score.
+  average
+}
 
 /// Class representing the result of a plagiarism check.
 class PlagiarismResult {
@@ -77,7 +103,6 @@ class PlagiarismChecker {
         algorithmUsed = 'TF-IDF Similarity';
         break;
       case Algorithm.average:
-      default:
         similarityScore = (_cosineSimilarity.calculate(text1, text2) +
                 _jaccardSimilarity.calculate(text1, text2) +
                 _tfidfSimilarity.calculate(text1, text2)) /

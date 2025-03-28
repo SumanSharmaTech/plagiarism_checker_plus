@@ -2,6 +2,12 @@
 
 A Flutter package for detecting text similarity and potential plagiarism using Cosine Similarity and Jaccard Similarity algorithms. This package provides flexible options for algorithm selection, customizable similarity thresholds, and detailed analysis results.
 
+<p align="center">
+  <img src="assets/demo.jpg" width="45%" alt="Demo Screen">
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="assets/demo_result.jpg" width="45%" alt="Results Screen">
+</p>
+
 ## Features
 
 <br>🔍 **Multiple Algorithms**: Choose between Cosine Similarity, Jaccard Similarity, or use both

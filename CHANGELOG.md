@@ -20,3 +20,10 @@
 
 - Added comprehensive documentation for public API elements.
 - Improved code readability and maintainability.
+
+## 1.0.4
+
+- Fixed static analysis issues
+- Added missing documentation for public enum values
+- Created comprehensive example app demonstrating all features
+- Improved API documentation clarity
